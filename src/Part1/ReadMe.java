@@ -53,6 +53,15 @@ public class ReadMe extends BaseStaticDriver {
 
         WebElement submit = driver.findElement(By.cssSelector("button[id='submit']"));
         submit.click();
+
+        WebElement nameKontrol = driver.findElement(By.cssSelector("p[id='name']"));
+        String actual = nameKontrol.getText();
+        String expected = "Name:Automation";
+        Assert.assertEquals("yanlış",expected,actual);
+        if(actual.equals(expected)){
+            System.out.println("email onaylandı");
+        }
+
 /*
         WebElement kontroluser=driver.findElement(By.cssSelector("p[id='name']"));
         String actual = kontroluser.getText();

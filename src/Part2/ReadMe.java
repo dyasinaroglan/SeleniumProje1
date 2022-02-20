@@ -40,8 +40,10 @@ public class ReadMe extends BaseStaticDriver {
         WebElement text = driver.findElement(By.id("time"));
         String result =text.getText();
         String expected = "Your nearest branch closes in: 30m 5s";
-
-        Assert.assertEquals("test tamamlandı...",expected,result);
+        Assert.assertEquals("test başarısız...",expected,result);
+        if (result.equals(expected)){
+            System.out.println("test başarı ile tamamlandı");
+        }
 
         String url = driver.getCurrentUrl();
         Assert.assertEquals("YANLIŞ ADRES","https://demo.applitools.com/app.html",url);
